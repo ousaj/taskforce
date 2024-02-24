@@ -1,7 +1,7 @@
-This is a test.
+# Taskforce
 
-This is another test.
+This is a task-management APP using Angular as the frontend and Spring Boot as the backend.
 
-Another one.
+It uses a local SQLite database to store the info.
 
-This
+
