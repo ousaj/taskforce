@@ -16,9 +16,12 @@ public class TaskForceController implements TaskForceAPI {
     private TaskRepository taskRepository;
 
     @Override
-    public void createTask() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createTask'");
+    public void createTask(Task task) {
+        if (task == null) {
+            return;
+        }
+
+       taskRepository.saveAndFlush(task);
     }
 
     @Override
@@ -27,15 +30,21 @@ public class TaskForceController implements TaskForceAPI {
     }
 
     @Override
-    public void updateTask() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateTask'");
+    public void updateTask(Task task) {
+        if (task == null) {
+            return;
+        }
+
+        taskRepository.saveAndFlush(task);
     }
 
     @Override
-    public void deleteTask() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteTask'");
+    public void deleteTask(Long id) {
+        if (id == null) {
+            return;
+        }
+
+        taskRepository.deleteById(id);
     }
 
     @Override
