@@ -1,0 +1,20 @@
+<section class="table">
+   <table>
+        <tbody *ngIf="this.tasks.length > 0">
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+            </tr>
+            <tr *ngFor="let task of this.tasks"> 
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+                <td>
+                    <button (click)="this.getDetails(task.id)">Details</button>
+                </td>
+                <td>
+                    <button (click)="this.deleteTask(task.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+</section>
