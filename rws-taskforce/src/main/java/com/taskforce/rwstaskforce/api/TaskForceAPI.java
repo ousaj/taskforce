@@ -21,6 +21,9 @@ public interface TaskForceAPI {
     @GetMapping(value = "/getTasks")
     public List<Task> getTasks();
 
+    @GetMapping(value = "/getTask")
+    public Task getTask(@RequestParam Long id);
+
     @PutMapping(value = "/updateTask")
     public void updateTask(@RequestBody Task task);
 

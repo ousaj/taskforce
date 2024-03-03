@@ -1,0 +1,11 @@
+<section class="taskForm">
+    <form *ngIf="this.task !== undefined">
+        <label for="task-id">Task ID</label>
+        <input name="task-id" value="{{this.task.id}}">
+
+        <label for="task-name">Task name</label>
+        <input name="task-name" value="{{this.task.name}}">
+
+    </form>
+
+</section>

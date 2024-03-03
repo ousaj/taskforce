@@ -50,6 +50,20 @@ public class TaskForceController implements TaskForceAPI {
     }
 
     @Override
+    public Task getTask(Long id) {
+        Task task;
+
+        task = taskRepository.getTask(id);
+
+        // TODO: Error handling.
+        if (task == null) {
+            return null;
+        }
+
+        return task;
+    }
+
+    @Override
     public String test() {
         return "this is a test";
     }
