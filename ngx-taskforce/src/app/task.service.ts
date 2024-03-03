@@ -7,12 +7,17 @@ import { Task } from './task';
 export class TaskService {
 
   readonly taskQuery: string = 'http://localhost:8080/getTasks';
-
-  constructor() { }
+  readonly deletionQueryTemplate: string = 'http://localhost:8080/deleteTask?id=';
 
   async getTasks(): Promise<Task[]> {
     const data = await fetch(this.taskQuery);
 
     return await data.json() ?? [];
+  }
+
+  async deleteTask(taskId: number) {
+    const deletionQuery = `${this.deletionQueryTemplate}${taskId}`;
+
+    await fetch(deletionQuery, { method: 'DELETE' });
   }
 }

@@ -15,6 +15,10 @@ export class TasktableComponent {
   tasks: Task[] = [];
 
   constructor() {
+    this.getTasks();
+  }
+
+  getTasks() {
     this.taskService.getTasks().then((tasks: Task[]) => {
       this.tasks = tasks;
     });
@@ -25,6 +29,9 @@ export class TasktableComponent {
   }
 
   deleteTask(taskId: number) {
+    this.taskService.deleteTask(taskId).then(() => {
+      this.getTasks();
+    })
     console.log('deleteTask()', taskId);
   }
 }

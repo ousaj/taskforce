@@ -3,6 +3,7 @@ package com.taskforce.rwstaskforce.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.taskforce.rwstaskforce.api.TaskForceAPI;
@@ -10,6 +11,7 @@ import com.taskforce.rwstaskforce.models.Task;
 import com.taskforce.rwstaskforce.repositories.TaskRepository;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200") 
 public class TaskForceController implements TaskForceAPI {
 
     @Autowired
